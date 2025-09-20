@@ -48,6 +48,6 @@ COPY --from=builder /app/.env .
 # Копируем docs
 COPY --from=builder /app/docs ./docs/
 
-EXPOSE 7777
+EXPOSE 6565
 
 CMD ["./main"]
