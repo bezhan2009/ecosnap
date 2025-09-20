@@ -28,7 +28,7 @@
     "host": "postgres",
     "port": "5432",
     "user": "postgres",
-    "database": "premies_portal_db",
+    "database": "eco_db",
     "sslmode": "disable"
   }
 }

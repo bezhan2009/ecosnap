@@ -18,7 +18,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: techno_db
+      POSTGRES_DB: eco_db
     volumes:
       - ./db-data:/var/lib/postgresql/data
     ports:
