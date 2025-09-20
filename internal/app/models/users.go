@@ -11,4 +11,8 @@ type User struct {
 	Password string `json:"-" gorm:"type:varchar(255);not null"`
 
 	FullName string `json:"full_name" gorm:"type:varchar(255);"`
+
+	Points uint `json:"points"`
+
+	Trash []Trash `json:"trash" gorm:"foreignkey:UserID"`
 }

@@ -13,12 +13,12 @@
   },
   "app_params": {
     "gin_mode": "release",
-    "port_run": "7777",
+    "port_run": "6565",
     "server_url": "localhost",
-    "server_name": "ActiveDailyecosnap_service"
+    "server_name": "ActiveDailyApplications_service"
   },
   "cors": {
-    "allow_origins": ["http://localhost:5173"],
+    "allow_origins": ["*"],
     "allow_methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
     "allow_headers": ["Origin", "Content-Type", "Authorization"],
     "expose_headers": ["Content-Length"],
@@ -30,5 +30,9 @@
     "user": "postgres",
     "database": "eco_db",
     "sslmode": "disable"
+  },
+  "auth_params": {
+    "jwt_secret_key": "",
+    "jwt_ttl_minutes": 360
   }
 }

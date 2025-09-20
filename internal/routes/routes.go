@@ -31,5 +31,13 @@ func InitRoutes(r *gin.Engine) *gin.Engine {
 		profile.PATCH("/password", controllers.UpdateUsersPassword)
 	}
 
+	trash := r.Group("/trash", middlewares.CheckUserAuthentication)
+	{
+		trash.GET("", controllers.GetAllTrashes)
+		trash.GET("/:id", controllers.GetTrashByID)
+		trash.POST("", controllers.CreateTrash)
+		trash.DELETE("/:id", controllers.DeleteTrash)
+	}
+
 	return r
 }
