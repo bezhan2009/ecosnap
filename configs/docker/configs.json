@@ -28,7 +28,7 @@
     "host": "postgres",
     "port": "5432",
     "user": "postgres",
-    "database": "eco_db",
+    "database": "postgres",
     "sslmode": "disable"
   },
   "auth_params": {
