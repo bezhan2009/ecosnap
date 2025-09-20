@@ -1,0 +1,34 @@
+{
+  "log_params": {
+    "log_directory": "logs",
+    "log_info": "info.log",
+    "log_error": "error.log",
+    "log_warn": "warn.log",
+    "log_debug": "debug.log",
+    "max_size_megabytes": 10,
+    "max_backups": 4,
+    "max_age": 30,
+    "compress": true,
+    "local_time": true
+  },
+  "app_params": {
+    "gin_mode": "release",
+    "port_run": "7777",
+    "server_url": "localhost",
+    "server_name": "ActiveDailyecosnap_service"
+  },
+  "cors": {
+    "allow_origins": ["http://localhost:5173"],
+    "allow_methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
+    "allow_headers": ["Origin", "Content-Type", "Authorization"],
+    "expose_headers": ["Content-Length"],
+    "allow_credentials": true
+  },
+  "postgres_params": {
+    "host": "postgres",
+    "port": "5432",
+    "user": "postgres",
+    "database": "premies_portal_db",
+    "sslmode": "disable"
+  }
+}

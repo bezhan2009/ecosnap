@@ -1,0 +1,62 @@
+{
+  "log_params": {
+    "log_directory": "logs",
+    "log_info": "info.log",
+    "log_error": "error.log",
+    "log_warn": "warn.log",
+    "log_debug": "debug.log",
+    "max_size_megabytes": 10,
+    "max_backups": 4,
+    "max_age": 30,
+    "compress": true,
+    "local_time": true
+  },
+  "app_params": {
+    "gin_mode": "release",
+    "port_run": "8181",
+    "server_url": "localhost",
+    "server_name": "ecosnap_service",
+    "app_id": 2,
+    "env": "localhost"
+  },
+  "postgres_params": {
+    "host": "db",
+    "port": "5432",
+    "user": "postgres",
+    "database": "biz_mart_db",
+    "user_database": "users_db",
+    "sslmode": "disable"
+  },
+  "redis_params": {
+    "host": "redis",
+    "port": 6379,
+    "password": "",
+    "db": 0
+  },
+  "kafka_params": {
+    "host": "kafka",
+    "port": 9092,
+    "topic": "users_topic",
+    "group_id": "users-processor-unique",
+    "auto_offset_reset": "earliest"
+  },
+  "auth_params": {
+    "jwt_secret_key": "",
+    "jwt_ttl_minutes": 60
+  },
+  "providers": {
+    "google": {
+      "client_id": "YOUR_CLIENT_ID",
+      "client_secret": "YOUR_CLIENT_SECRET",
+      "redirect": "http://localhost:8585/auth/google/callback"
+    }
+  },
+  "clients": {
+    "sso": {
+      "address": "grpc_server:44044",
+      "timeout": "1s",
+      "retries_count": 5,
+      "insecure": true
+    }
+  }
+}
