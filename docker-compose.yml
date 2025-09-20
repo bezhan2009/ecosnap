@@ -5,7 +5,7 @@ services:
     build:
       context: .
     ports:
-      - "9090:9090"
+      - "6565:6565"
     volumes:
       - go_uploads_data:/app/uploads
     depends_on:
