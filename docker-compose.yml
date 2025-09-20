@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  ecosnap:
+    build:
+      context: .
+    ports:
+      - "9090:9090"
+    volumes:
+      - go_uploads_data:/app/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  go_uploads_data:
