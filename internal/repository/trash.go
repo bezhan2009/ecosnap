@@ -9,6 +9,7 @@ import (
 func GetAllTrashes(month, year int) (trashes []models.Trash, err error) {
 	if err = db.GetDBConn().Model(&models.Trash{}).
 		Where("EXTRACT(MONTH FROM created_at) = ? AND EXTRACT(YEAR FROM created_at) = ?", month, year).
+		Preload("TrashCategories").
 		Find(&trashes).Error; err != nil {
 		logger.Error.Printf("[repository.GetAllTrashes] Error getting trashes: %s", err.Error())
 
@@ -21,6 +22,7 @@ func GetAllTrashes(month, year int) (trashes []models.Trash, err error) {
 func GetTrashByID(trashID int) (trashes models.Trash, err error) {
 	if err = db.GetDBConn().Model(&models.Trash{}).
 		Where("id = ?", trashID).
+		Preload("TrashCategories").
 		First(&trashes).Error; err != nil {
 		logger.Error.Printf("[repository.GetAllTrashes] Error getting trashes: %s", err.Error())
 

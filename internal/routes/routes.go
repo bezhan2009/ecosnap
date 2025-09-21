@@ -39,5 +39,10 @@ func InitRoutes(r *gin.Engine) *gin.Engine {
 		trash.DELETE("/:id", controllers.DeleteTrash)
 	}
 
+	analyse := r.Group("/analyse")
+	{
+		analyse.POST("", controllers.AnalyzeImageWithText)
+	}
+
 	return r
 }

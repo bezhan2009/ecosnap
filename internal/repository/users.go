@@ -66,7 +66,9 @@ func GetAllUsers(search string) (users []models.User, err error) {
 			users.email ILIKE ? OR 
 			users.full_name ILIKE ?`,
 			searchPattern, searchPattern, searchPattern,
-		).Preload("Trash")
+		).
+			Preload("Trash").
+			Preload("Trash.TrashCategories")
 	}
 
 	err = query.Find(&users).Error
@@ -82,6 +84,7 @@ func GetUserByID(id uint) (user models.User, err error) {
 	err = db.GetDBConn().
 		Where("id = ?", id).
 		Preload("Trash").
+		Preload("Trash.TrashCategories").
 		First(&user).Error
 
 	if err != nil {

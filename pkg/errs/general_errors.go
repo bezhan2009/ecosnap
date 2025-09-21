@@ -14,6 +14,7 @@ var (
 	ErrProductNotFound         = errors.New("ErrProductNotFound")
 	ErrOrderNotFound           = errors.New("ErrOrderNotFound")
 	ErrCategoryNotFound        = errors.New("ErrCategoryNotFound")
+	ErrGeminiIsNotWorking      = errors.New("ErrGeminiIsNotWorking")
 	ErrOrderStatusNotFound     = errors.New("ErrOrderStatusNotFound")
 	ErrSomethingWentWrong      = errors.New("ErrSomethingWentWrong")
 	ErrNoProductFound          = errors.New("ErrNoProductFound")
